@@ -1,0 +1,95 @@
+.landing-page {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+.align-content-landing-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 80%;
+  padding-left: 7%;
+  width: 100%;
+}
+.content-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  width: 50%;
+  padding-top: 7rem;
+  height: 100%;
+}
+
+.cover-img-side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url("../../assets/cover-bg.svg");
+}
+.photo-grids {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  width: 70%;
+  height: 60%;
+}
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-end {
+  align-self: end;
+}
+.align-top {
+  align-self: flex-start;
+}
+
+.grid-item img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 0.7rem;
+}
+
+.grid-item.large {
+  grid-column: span 1;
+  grid-row: span 2;
+  width: 100%;
+}
+.underlined-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.underlined-text h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.underlined-text p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #303030;
+  padding-top: 1.1rem;
+  padding-bottom: 2.5rem;
+}
+.align-start {
+  align-self: self-start;
+}
+.h1-bottom-border {
+  background: no-repeat;
+  background-position: bottom;
+  background-image: url("../../assets/bottom-border.svg");
+}
+/* chat gpt  */

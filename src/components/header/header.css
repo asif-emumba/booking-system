@@ -1,5 +1,29 @@
-main-container {
-  height: 56px;
+/* header section */
+.header-content {
+  height: 3.5rem;
   width: 100%;
-  background-color: black;
+  background-color: transparent;
+  display: flex;
+  padding-top: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-content img {
+  height: 26px;
+}
+
+.header-content nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+.header-content a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.active-link {
+  border-bottom: 3px solid blue; /* Add bottom border for active link */
+  color: blue; /* Optional: Change color for active link */
 }

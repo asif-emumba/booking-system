@@ -1,0 +1,279 @@
+.main-content {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+.background-image {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/src/assets/cover-1.png);
+}
+.query-container {
+  height: 8rem;
+  width: 70%;
+  display: flex;
+  align-self: center;
+  margin-top: -4rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+}
+.query-sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.query-info-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  gap: 0.5rem;
+  padding-left: 0.7rem;
+}
+
+.logo-container {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  align-content: center;
+  justify-content: center;
+}
+.logo-container img {
+  height: 100%;
+  width: 100%;
+  padding: 0.4rem;
+}
+.query-sections h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #202445;
+}
+.query-sections p {
+  font-size: 1rem;
+  color: #999999;
+}
+.section-divider {
+  background-color: #ebebeb;
+  width: 0.1rem;
+  height: 70%;
+}
+.search-button {
+  width: 3.3rem;
+  height: 70%;
+  background-color: #f16b51;
+  border-radius: 0.7rem;
+  border: none;
+  margin-left: 3rem;
+  margin-right: 0.5rem;
+}
+
+/* ant desing calendar customization */
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-title {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.calendar-dropdown {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-calendar {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  background-color: #fafafa;
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.ant-picker-cell-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.ant-picker-cell {
+  text-align: center;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.ant-picker-cell-in-view {
+  color: #000;
+}
+
+.ant-picker-cell-out-view {
+  color: #d9d9d9;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  border: 1px solid #f16b51;
+  color: #f16b51;
+  align-self: center;
+  font-weight: 500;
+  background: #202445;
+}
+
+.ant-picker-cell:hover .ant-picker-cell-inner {
+  background-color: #f16b51;
+  color: #f16b51;
+}
+.ant-picker-content th {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #202020;
+}
+.date-choose-btn {
+  font-size: 1rem;
+  color: #999999;
+  border: none;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  padding: 0px;
+  box-shadow: none;
+}
+.date-choose-btn span {
+  color: #999999;
+}
+.drop-down-style {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* drop down list styles */
+.custom-dropdown-list {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.dropdown-item {
+  height: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 3rem;
+  align-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #505050;
+  transition: background 0.3s ease;
+}
+/* Range Picker */
+.range-picker {
+  display: flex;
+  border: none;
+}
+.range-picker input {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+.ant-picker {
+  padding: 0px;
+}
+.ant-picker-suffix span {
+  display: none;
+}
+.ant-space-item {
+  margin: 0px;
+  padding: 0px;
+}
+.ant-picker-range-separator {
+  padding: 0.1rem;
+}
+
+.range-picker input::placeholder {
+  color: #999999;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "poppins", sans-serif;
+}
+.range-picker:nth-child(2) {
+  display: none;
+}
+.range-picker input:focus {
+  border: none;
+}
+
+.dropdown-item:hover {
+  background: rgba(241, 107, 81, 0.2);
+}
+
+/* Popular section */
+.popular-section {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 45%;
+  align-self: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+.popular-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #202445;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+.location-buttons {
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+}
