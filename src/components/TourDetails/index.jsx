@@ -10,6 +10,8 @@ import CircularIcon from '../CustomComponents/RoundedIcons';
 const TourDetailsPage = () => {
 
     const { IcLocationSmall, IcDollarSmall, IcClock } = Icons
+    const bookingStatus = useSelector((state) => state.bookingStatus.status);
+    const isBooked = bookingStatus === "booked";
     const navigate = useNavigate();
     const handleTourBook = (tour) => {
         navigate(`/book-tour/${tour.id}`); // Navigate to the details page
@@ -104,7 +106,10 @@ const TourDetailsPage = () => {
                                 <ItineraryCard key={index} index={index} items={items} />
                             ))}
                         </div>
-                        <button className='book-now-btn' onClick={() => handleTourBook(selectedTour)}>Book Now</button>
+                        {isBooked ?
+                            (<div className='hide-book-btn'></div>) :
+                            (<button className='book-now-btn' onClick={() => handleTourBook(selectedTour)}>Book Now</button>)
+                        }
                     </div>
                 </div>
 

@@ -22,8 +22,13 @@ export const bookedTourSlice = createSlice({
                 localStorage.setItem('bookedTours', JSON.stringify(state.bookings));
             }
         },
+        deleteBooking: (state, action) => {
+            const id = action.payload;
+            state.bookings = state.bookings.filter((booking) => booking.id !== id);
+            localStorage.setItem('bookedTours', JSON.stringify(state.bookings)); // Update local storage
+        },
     },
 });
 
-export const { addBooking, updateBooking } = bookedTourSlice.actions;
+export const { addBooking, updateBooking, deleteBooking } = bookedTourSlice.actions;
 export default bookedTourSlice.reducer;

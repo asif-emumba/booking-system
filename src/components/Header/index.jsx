@@ -10,7 +10,7 @@ function Header({ isShow, onClick }) {
                 <img src={Logo} alt='logo' />
                 <nav>
                     <Link to='/all-tours'>Tours</Link>
-                    <a href='#'>Book Tour</a>
+
                     <Link to='/my-tours'>My Tours</Link>
                 </nav>
                 {isShow ? <CustomButton title='Explore Now' onClick={onClick} /> : <div></div>}

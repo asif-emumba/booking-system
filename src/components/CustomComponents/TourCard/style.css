@@ -24,6 +24,10 @@
   opacity: 1;
   visibility: visible;
 }
+.tour-card:hover .booked-hover-State {
+  opacity: 1;
+  visibility: visible;
+}
 
 /* Image styling */
 .tour-image {
@@ -99,4 +103,43 @@
   left: 50%;
   transform: translateX(-50%);
   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.booked-hover-State {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  padding: 0;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.booked-hover-State img {
+  height: 2rem;
+  width: 2rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+.booked-hover-State button {
+  background-color: #f16b51;
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }

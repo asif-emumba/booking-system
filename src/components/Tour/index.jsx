@@ -5,7 +5,8 @@ import Icons from '../../utils/Icons';
 import { useNavigate } from 'react-router-dom';
 import { setSelectedTour } from '../../tourDataManager/TourSlice/TourSlice';
 import TourCard from '../CustomComponents/TourCard';
-
+import { useEffect } from 'react';
+import { setUnbooked } from '../../tourDataManager/TourStatusSlice/TourStatusSlice'
 
 const AllTours = () => {
     const tours = useSelector(state => state.tours.value)
@@ -16,9 +17,11 @@ const AllTours = () => {
     // Handle "View Details" button click
     const handleViewDetails = (tour) => {
         dispatch(setSelectedTour(tour));
-        localStorage.clear()
         navigate(`/tour-details/${tour.id}`);
     };
+    useEffect(() => {
+        dispatch(setUnbooked());
+    }, [dispatch]);
     return (
         <div className='main-content-tours'>
             <Header isShow={false} onClick={() => { }} />
