@@ -1,32 +1,11 @@
-.main-content-tours {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-.main-body-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-/* Tours card list */
-/* Container for all cards */
-.tour-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin-bottom: 2rem;
-}
-
 /* Individual card styling */
 .tour-card {
-  flex-basis: 32%;
+  width: 24.2rem;
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+  align-self: flex-start;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -38,12 +17,12 @@
 }
 .tour-card:hover .tour-details-footer {
   opacity: 0;
-  visibility: hidden; /* Hides the upper container while still leaving space */
+  visibility: hidden;
 }
 
 .tour-card:hover .view-details-hover-btn {
   opacity: 1;
-  visibility: visible; /* Show the button */
+  visibility: visible;
 }
 
 /* Image styling */
@@ -89,18 +68,9 @@
   gap: 3rem;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition for fading */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.icon-container {
-  height: 24px;
-  width: 24px;
-  border-radius: 100%;
-  display: flex;
-  background-color: #f4f4f4;
-  align-items: center;
-  justify-content: center;
-}
 .tour-details-footer-left {
   display: flex;
   align-items: flex-end;
@@ -110,17 +80,6 @@
 .tour-details-footer p {
   margin-top: 0;
   margin-bottom: 0;
-}
-.filter-button {
-  padding: 0.7rem 1rem 0.7rem 1rem;
-  align-self: flex-end;
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: center;
-  border: 1px solid #e1e1e1;
-  border-radius: 0.8rem;
-  margin: 4rem 0rem 2rem 0rem;
 }
 .view-details-hover-btn {
   width: 90%;

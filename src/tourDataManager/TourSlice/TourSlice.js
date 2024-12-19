@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { tourDetails } from '../utils/Tours-data'
+import { tourDetails } from '../../utils/Tours-data'
 
 export const tourSlice = createSlice({
     name: 'tours',

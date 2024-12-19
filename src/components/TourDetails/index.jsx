@@ -1,13 +1,19 @@
 // TourDetails.js
-import './TourDetailsPage.css';
+import './style.css';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import Header from '../header/Header';
+import { useNavigate, useParams } from 'react-router-dom';
+import Header from '../Header/index';
 import Icons from '../../utils/Icons';
+import ItineraryCard from '../CustomComponents/ItineraryCard';
+import CircularIcon from '../CustomComponents/RoundedIcons';
 
 const TourDetailsPage = () => {
 
-    const { IcLocation, IcDollar, IcClock, IcClouds, IcSun } = Icons
+    const { IcLocationSmall, IcDollarSmall, IcClock } = Icons
+    const navigate = useNavigate();
+    const handleTourBook = (tour) => {
+        navigate(`/book-tour/${tour.id}`); // Navigate to the details page
+    };
 
     const { id } = useParams();
     const tours = useSelector(state => state.tours.value);
@@ -27,21 +33,18 @@ const TourDetailsPage = () => {
                     {/* icons with details */}
                     <div className='details-with-icons-row'>
                         <div className='details-with-icons'>
-                            <div className='detail-icons'>
-                                <img src={IcLocation} alt='location' />
-                            </div>
+                            <CircularIcon src={IcLocationSmall} alt='location' height='24px' width='24px' />
+
                             <p>{selectedTour.city}</p>
                         </div>
                         <div className='details-with-icons'>
-                            <div className='detail-icons'>
-                                <img src={IcDollar} alt='location' />
-                            </div>
+                            <CircularIcon src={IcDollarSmall} alt='dollar' height='24px' width='24px' />
                             <p>{selectedTour.priceRange}</p>
                         </div>
                         <div className='details-with-icons'>
-                            <div className='detail-icons'>
-                                <img src={IcClock} alt='location' />
-                            </div>
+
+                            <CircularIcon src={IcClock} alt="Clock" height='24px' width='24px' />
+
                             <p>{selectedTour.numOfDays}</p>
                         </div>
                     </div>
@@ -98,22 +101,10 @@ const TourDetailsPage = () => {
                         <h2>Itinerary Schedule</h2>
                         <div className='itinerary-cards-row '>
                             {selectedTour.itinerary.map((items, index) => (
-                                <div key={index} className='itinerary-cards'>
-                                    <div className='itinerary-cards-first-row'>
-                                        <h3>Day {items.day}</h3>
-                                        <div className='weather-content'>
-                                            <img src={items.weather > 15 ? IcSun : IcClouds} alt='Clouds icon' />
-                                            <h3>{items.weather}C</h3></div>
-                                    </div>
-                                    {items.schedule.map((li, index) => (
-                                        <ul key={index}>
-                                            <li>{li}</li>
-                                        </ul>
-                                    ))}
-                                </div>
+                                <ItineraryCard key={index} index={index} items={items} />
                             ))}
                         </div>
-                        <button className='book-now-btn'>Book Now</button>
+                        <button className='book-now-btn' onClick={() => handleTourBook(selectedTour)}>Book Now</button>
                     </div>
                 </div>
 

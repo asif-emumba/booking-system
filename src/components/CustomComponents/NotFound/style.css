@@ -1,0 +1,15 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+  margin-top: 7rem;
+}
+.not-found p {
+  font-size: 1.7rem;
+  color: #797c9a;
+  font-weight: 400;
+  text-align: center;
+}

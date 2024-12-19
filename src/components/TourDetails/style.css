@@ -39,21 +39,12 @@
   align-items: center;
   gap: 0.5rem;
 }
-.detail-icons {
-  display: flex;
-  height: 24px;
-  width: 24px;
-  border-radius: 100%;
-  background-color: #f4f4f4;
-  align-items: center;
-  justify-content: center;
-}
 
 /* tour details images */
 .tour-images-container {
   display: grid;
-  grid-template-columns: 45% 55%; /* Two equal columns: left and right */
-  gap: 1.5rem; /* Space between images */
+  grid-template-columns: 45% 55%;
+  gap: 1.5rem;
   width: 100%;
   height: auto;
 }
@@ -139,7 +130,7 @@
   list-style-type: none;
 }
 .features-list li {
-  width: 50%; /* 3 items per row */
+  width: 50%;
   background-image: url("../../assets/Ic-tikmark.svg");
   background-repeat: no-repeat;
   background-position: 0 5px;
@@ -166,53 +157,7 @@
   gap: 1.5rem;
   width: 100%;
 }
-.itinerary-cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  padding: 2rem;
-  margin-top: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  border-radius: 0.7rem;
-}
-.itinerary-cards:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-.itinerary-cards-first-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-.itinerary-cards h3 {
-  font-size: 1.5rem;
-  color: #202445;
-  font-weight: 500;
-  font-family: "Popins", sans-serif;
-}
-.weather-content {
-  display: flex;
-  flex-direction: row;
-  gap: 0.6rem;
-  justify-content: center;
-  align-items: center;
-}
-.weather-content img {
-  height: 30px;
-  width: 30px;
-}
-.itinerary-cards ul li {
-  color: #404040;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: "Popins", sans-serif;
-  line-height: 1.5;
-}
+
 .book-now-btn {
   background-color: #f16b51;
   color: white;

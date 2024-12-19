@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import CustomButton from '../antD_components/CustomButton';
-import './Header.css';
+import CustomButton from '../AntDComponents/CustomButton';
+import './style.css';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/logo.svg'
 function Header({ isShow, onClick }) {
@@ -11,7 +11,7 @@ function Header({ isShow, onClick }) {
                 <nav>
                     <Link to='/all-tours'>Tours</Link>
                     <a href='#'>Book Tour</a>
-                    <a href='#'>My Tours</a>
+                    <Link to='/my-tours'>My Tours</Link>
                 </nav>
                 {isShow ? <CustomButton title='Explore Now' onClick={onClick} /> : <div></div>}
 

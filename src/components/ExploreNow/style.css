@@ -46,23 +46,6 @@
   padding-left: 0.7rem;
 }
 
-.logo-container {
-  height: 2rem;
-  width: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4;
-  border-radius: 1rem;
-  align-content: center;
-  justify-content: center;
-}
-.logo-container img {
-  height: 100%;
-  width: 100%;
-  padding: 0.4rem;
-}
 .query-sections h2 {
   font-size: 1.2rem;
   font-weight: 600;

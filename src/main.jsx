@@ -1,6 +1,6 @@
 import './index.css'
 import App from './App.jsx'
-import store from './app/Store.js'
+import store from './tourDataManager/Store/Store.js'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'

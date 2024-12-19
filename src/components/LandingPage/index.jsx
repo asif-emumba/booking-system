@@ -1,6 +1,6 @@
-import CustomButton from "../antD_components/CustomButton"
-import Header from "../header/Header"
-import './LandingPage.css'
+import CustomButton from "../AntDComponents/CustomButton"
+import Header from "../Header/index"
+import './style.css';
 import Icons from '../../utils/Icons';
 import { useNavigate } from "react-router-dom";
 

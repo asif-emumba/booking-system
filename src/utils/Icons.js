@@ -1,6 +1,8 @@
 import IcLocation from '../assets/Ic-location.svg';
+import IcLocationSmall from '../assets/Ic-location-small.svg';
 import IcCalendar from '../assets/Ic-calendar.svg';
 import IcDollar from '../assets/Ic-dollar.svg';
+import IcDollarSmall from '../assets/Ic-dollar-small.svg';
 import IcArrowUp from '../assets/Ic-arrow-up.svg';
 import IcSearch from '../assets/Ic-search.svg';
 import IcBin from '../assets/Ic-bin.svg';
@@ -15,6 +17,7 @@ import LargeGridCover from '../assets/grid-1.png';
 import SmallGridCover1 from '../assets/grid-2.png';
 import SmallGridCover2 from '../assets/grid-3.png';
 import UnderlineBg from '../assets/bottom-border.svg';
+import BokingCover from "../assets/booking-cover.png"
 const Icons = {
     IcLocation,
     IcCalendar,
@@ -32,7 +35,10 @@ const Icons = {
     LargeGridCover,
     SmallGridCover1,
     SmallGridCover2,
-    UnderlineBg
+    UnderlineBg,
+    BokingCover,
+    IcLocationSmall,
+    IcDollarSmall
 }
 
 export default Icons;
