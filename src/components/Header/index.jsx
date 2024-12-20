@@ -7,10 +7,9 @@ function Header({ isShow, onClick }) {
     return (
         <header className='container'>
             <div className='header-content'>
-                <img src={Logo} alt='logo' />
+                <Link to='/'><img src={Logo} alt='logo' /></Link>
                 <nav>
                     <Link to='/all-tours'>Tours</Link>
-
                     <Link to='/my-tours'>My Tours</Link>
                 </nav>
                 {isShow ? <CustomButton title='Explore Now' onClick={onClick} /> : <div></div>}

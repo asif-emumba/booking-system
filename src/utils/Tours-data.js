@@ -333,7 +333,7 @@ export const tourDetails = [
             ["The Vizcaya Museum and Gardens is the former villa and estate of businessman James Deering, of the Deering McCormick-International Harvester fortune, on Biscayne Bay in the present day Coconut Grove neighborhood of Miami, Florida.",
                 "The Vizcaya Museum and Gardens is the former villa and estate of businessman James Deering, of the Deering McCormick-International Harvester fortune, on Biscayne Bay in the present day Coconut Grove neighborhood of Miami, Florida.",
             ],
-        city: "Miami",
+        city: "Dallas",
         priceRange: "$1000 Above",
         numOfDays: dayjs("2025-01-07").diff(dayjs("2025-01-05"), "day") + 1 + " Days",
         coverImage: HammockPark,
