@@ -28,7 +28,6 @@
   align-items: center;
   border: 1px solid #e1e1e1;
   border-radius: 0.8rem;
-  margin: 4rem 0rem 2rem 0rem;
 }
 .no-tours-found {
   display: flex;
@@ -43,5 +42,21 @@
   color: #202445;
   font-weight: 600;
   margin: 4.3rem 0rem 1.5rem 0rem;
+  align-self: flex-start;
+}
+.top-content-with-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 4.3rem;
+  margin-bottom: 2rem;
+}
+
+.top-content-with-filter h2 {
+  font-size: 2.5rem;
+  color: #202445;
+  font-weight: 600;
   align-self: flex-start;
 }

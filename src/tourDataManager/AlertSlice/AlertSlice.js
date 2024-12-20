@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     isOpen: false,
     message: '',
-    buttons: { confirm: 'Confirm', cancel: 'Cancel' }, // Default button titles
+    buttons: { confirm: 'Confirm', cancel: 'Cancel' },
     onConfirm: null,
 };
 

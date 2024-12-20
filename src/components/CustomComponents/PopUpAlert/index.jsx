@@ -9,11 +9,11 @@ const CustomAlert = () => {
 
     const handleConfirm = () => {
         console.log('Delete confirmed');
-        dispatch(hideAlert());  // Close the alert after confirmation
+        dispatch(hideAlert());
     };
 
     const handleCancel = () => {
-        dispatch(hideAlert());  // Close the alert on cancel
+        dispatch(hideAlert());
     };
 
     if (!isOpen) return null;

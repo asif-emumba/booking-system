@@ -9,19 +9,30 @@ import Icons from '../../utils/Icons';
 import CircularIcon from '../CustomComponents/RoundedIcons';
 import { useNavigate } from 'react-router-dom';
 const { RangePicker } = DatePicker;
+
 const ExploreNow = () => {
     const { IcLocation, IcCalendar, IcDollar, IcSearch } = Icons;
-    // drop down list for money 
     const [locationTitle, setLocationTitle] = useState('Where you want to go?');
     const [selectedItem, setSelectedItem] = useState("Select an item");
-    const navigate = useNavigate()
-    // Handle item selection
-    const handleMenuClick = (item) => {
-        setSelectedItem(item.label);
-    };
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const navigate = useNavigate();
+    const [dates, setDates] = useState(null);
 
     const handleSearch = (locationName) => {
         navigate(`/all-tours`, { state: { locationName } });
+    };
+
+    const handleMenuClick = (item) => {
+        setSelectedItem(item.label);
+        setDropdownVisible(false);
+    };
+
+    const isSearchButtonEnabled = () => {
+        return !(locationTitle !== 'Where you want to go?' && selectedItem !== 'Select an item' && dates !== null);
+    };
+
+    const handleDateChange = (dates) => {
+        setDates(dates);
     };
 
     // Render custom dropdown content
@@ -38,7 +49,7 @@ const ExploreNow = () => {
             ))}
         </div>
     );
-
+    // location selection buttons
     const locationButtons = (
         <div>
             {locationItemsData.map((item) => (
@@ -76,7 +87,7 @@ const ExploreNow = () => {
                             <h2>Choose Date</h2>
                         </div>
                         <Space direction="vertical" size={12}>
-                            <RangePicker placeholder="Choose Here" className='range-picker' />
+                            <RangePicker placeholder="Choose Here" className='range-picker' value={dates} onChange={handleDateChange} />
                         </Space>
                     </div>
                 </div>
@@ -91,12 +102,14 @@ const ExploreNow = () => {
                             overlay={dropdownContent}
                             trigger={["click"]}
                             placement="bottom"
+                            visible={isDropdownVisible}
+                            onVisibleChange={(visible) => setDropdownVisible(visible)}
                         >
                             <Button className='date-choose-btn'>{selectedItem}</Button>
                         </Dropdown>
                     </div>
 
-                    <button className='search-button' disabled={locationTitle === 'Where you want to go?'} onClick={() => handleSearch(locationTitle)}>
+                    <button className='search-button' disabled={isSearchButtonEnabled()} onClick={() => handleSearch(locationTitle)}>
                         <img src={IcSearch} alt='Search' />
                     </button>
 

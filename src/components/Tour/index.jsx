@@ -36,14 +36,21 @@ const AllTours = () => {
 
                 {filteredTours.length > 0 ? (
                     <>
-                        <div className='filter-button'>
-                            <img src={IcFilter} alt="filter-icon" />
-                            <p>Filter</p>
+                        <div className='top-content-with-filter'>
+                            {(locationName === '') && (
+                                <h2>Top Destinantions At &quot;{locationName}&quot;</h2>
+                            )}
+
+                            <div className='filter-button'>
+                                <img src={IcFilter} alt="filter-icon" />
+                                <p>Filter</p>
+                            </div>
                         </div>
                         <div className="tour-container">
                             {
                                 filteredTours.map((tour) => (
                                     // Custom Tour Card component
+
                                     <TourCard
                                         key={tour.id}
                                         tour={tour}
@@ -61,7 +68,7 @@ const AllTours = () => {
                 )}
 
                 {/* tour list container */}
-                {(locationName === 'allTours') && (
+                {(locationName === '') && (
                     <div className='tour-container'>
                         {tours.map((tour) => {
                             return (
