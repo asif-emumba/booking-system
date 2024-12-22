@@ -15,7 +15,6 @@ const Routing = () => {
                 <Route path="/all-tours" element={<AllTours />} />
                 <Route path="/tour-details/:id" element={<TourDetailsPage />} />
                 <Route path="/book-tour/:id" element={<BookTour />} />
-                <Route path="/update-tour/:id" element={<BookTour mode="update" />} />
                 <Route path="/my-tours" element={<MyTours />} />
             </Routes>
         </BrowserRouter>

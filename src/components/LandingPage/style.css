@@ -92,4 +92,64 @@
   background-position: bottom;
   background-image: url("../../assets/bottom-border.svg");
 }
-/* chat gpt  */
+/* responsive break points */
+@media (max-width: 480px) {
+  .align-content-landing-page {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+  }
+  .cover-img-side {
+    width: 100%;
+    background-image: none;
+  }
+  .content-side {
+    width: 100%;
+    height: auto;
+  }
+  .photo-grids {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .grid-item img {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .align-end {
+    align-self: center;
+  }
+  .align-start {
+    align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  .align-content-landing-page {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+  }
+  .cover-img-side {
+    width: 100%;
+    background-image: none;
+  }
+  .content-side {
+    width: 100%;
+    height: auto;
+  }
+  .photo-grids {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .grid-item img {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .align-end {
+    align-self: center;
+  }
+  .align-start {
+    align-self: center;
+  }
+}

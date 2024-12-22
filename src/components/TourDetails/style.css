@@ -175,3 +175,51 @@
 .hide-book-btn {
   margin: 2.5rem 0 4rem 0;
 }
+/* responsive break points */
+@media (max-width: 480px) {
+  .tour-details-container h2 {
+    font-size: 1.5rem;
+  }
+  .details-with-icons-row {
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
+  .tour-images-container {
+    grid-template-columns: 100%;
+  }
+  .toursIncluded-container-rows {
+    padding: 1.37rem 0 1rem 0rem;
+  }
+  .features-list li {
+    width: 100%;
+  }
+  .itinerary-cards-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/* responsive break points */
+@media (max-width: 768px) {
+  .tour-details-container h2 {
+    font-size: 1.5rem;
+  }
+  .details-with-icons-row {
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
+  .tour-images-container {
+    grid-template-columns: 100%;
+  }
+  .toursIncluded-container-rows {
+    padding: 1.37rem 0 1rem 0rem;
+  }
+  .features-list li {
+    width: 100%;
+  }
+  .itinerary-cards-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

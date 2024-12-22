@@ -50,7 +50,6 @@ const AllTours = () => {
                             {
                                 filteredTours.map((tour) => (
                                     // Custom Tour Card component
-
                                     <TourCard
                                         key={tour.id}
                                         tour={tour}

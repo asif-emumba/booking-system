@@ -1,21 +1,7 @@
-
-import { useSelector, useDispatch } from 'react-redux';
+/* eslint-disable react/prop-types */
 import './style.css';
-import { hideAlert } from '../../../tourDataManager/AlertSlice/AlertSlice';
 
-const CustomAlert = () => {
-    const dispatch = useDispatch();
-    const { isOpen, message, buttons } = useSelector((state) => state.alert);
-
-    const handleConfirm = () => {
-        console.log('Delete confirmed');
-        dispatch(hideAlert());
-    };
-
-    const handleCancel = () => {
-        dispatch(hideAlert());
-    };
-
+const CustomAlert = ({ isOpen, message, buttons, onConfirm, onCancel }) => {
     if (!isOpen) return null;
 
     return (
@@ -24,12 +10,12 @@ const CustomAlert = () => {
                 <p>{message}</p>
                 <div className="alert-buttons">
                     {buttons.cancel && (
-                        <button className="alert-btn cancel" onClick={handleCancel}>
+                        <button className="alert-btn cancel" onClick={onCancel}>
                             {buttons.cancel}
                         </button>
                     )}
                     {buttons.confirm && (
-                        <button className="alert-btn delete" onClick={handleConfirm}>
+                        <button className="alert-btn delete" onClick={onConfirm}>
                             {buttons.confirm}
                         </button>
                     )}
@@ -40,4 +26,3 @@ const CustomAlert = () => {
 };
 
 export default CustomAlert;
-

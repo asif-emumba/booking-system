@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './style.css';
+import '../style.css';
 
 const BookTourForm = ({ formData, errors, handleSubmit, handleChange, handleOptionClick, isOpen, selectedOption, toggleDropdown }) => {
 

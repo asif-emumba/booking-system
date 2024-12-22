@@ -1,17 +1,23 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import Icons from "../../utils/Icons";
 import Header from "../Header/index";
 import './style.css';
 import { addBooking, updateBooking } from '../../tourDataManager/BookedTour/BookedTourSlice'
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { showAlert } from "../../tourDataManager/AlertSlice/AlertSlice";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import CustomAlert from "../CustomComponents/PopUpAlert";
-import BookTourForm from "../CustomComponents/BookingForm";
+import BookTourForm from "./components/form";
 
-const BookTour = ({ mode = "book" }) => {
-    const { id } = useParams(); // Get tour ID from route params
+const BookTour = () => {
+    const { id } = useParams();
+    const location = useLocation();
+    const navigate = useNavigate()
+    const [alertData, setAlertData] = useState({
+        isOpen: false,
+        message: 'Are you sure you want to delete this?',
+        buttons: { cancel: 'Cancel', confirm: 'Delete' },
+    });
+    const mode = location.state?.modeName || "book";
     const dispatch = useDispatch();
     const tours = useSelector((state) => state.tours.value);
     const selectedTour = useSelector(state => state.tours.selectedTour)
@@ -50,11 +56,16 @@ const BookTour = ({ mode = "book" }) => {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+
+    const handleNavigation = () => {
+        navigate(`/my-tours`);
+    };
+
     const handleOptionClick = (option) => {
-        setSelectedOption(option); // Update displayed option
+        setSelectedOption(option);
         setFormData((prevFormData) => ({
             ...prevFormData,
-            selectedPaymentMethod: option, // Sync formData
+            selectedPaymentMethod: option,
         }));
         setErrors((prevErrors) => ({
             ...prevErrors,
@@ -126,6 +137,11 @@ const BookTour = ({ mode = "book" }) => {
         return Object.keys(newErrors).length === 0;
     };
 
+    const handleConfirm = () => {
+        setAlertData((prev) => ({ ...prev, isOpen: false }));
+        handleNavigation()
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // get todays date 
@@ -136,12 +152,13 @@ const BookTour = ({ mode = "book" }) => {
             if (validate() && selectedTour) {
                 const updatedBooking = { ...formData, bookingDate: todayDate };
                 dispatch(updateBooking({ id: selectedTour.id, updatedDetails: updatedBooking }));
-                dispatch(
-                    showAlert({
-                        message: 'Tour update Successfully',
-                        buttons: { confirm: 'Ok', cancel: null },
-                    })
-                );
+                setAlertData({
+                    isOpen: true,
+                    message: 'TourDetails updated successfully!',
+                    buttons: {
+                        confirm: 'Done',
+                    },
+                });
                 setFormData(resetFormData);
                 setSelectedOption('Select');
             } else {
@@ -153,12 +170,13 @@ const BookTour = ({ mode = "book" }) => {
         // Handle new booking
         if (validate() && selectedTour) {
             dispatch(addBooking({ ...formData, id: selectedTour.id, bookingDate: todayDate }));
-            dispatch(
-                showAlert({
-                    message: 'Tour booked Successfully',
-                    buttons: { confirm: 'Ok', cancel: null },
-                })
-            );
+            setAlertData({
+                isOpen: true,
+                message: 'Tour booked successfully!',
+                buttons: {
+                    confirm: 'Done',
+                },
+            });
             setFormData(resetFormData);
             setSelectedOption('Select');
         } else {
@@ -168,7 +186,7 @@ const BookTour = ({ mode = "book" }) => {
 
     useEffect(() => {
         // If mode is 'update', pre-fill the form with existing user details
-        if (location.pathname.includes('update')) {
+        if (mode === 'update') {
             const booking = bookedTours.find((booking) => booking.id === parseInt(id, 10));
             if (booking) {
                 setFormData({
@@ -182,7 +200,7 @@ const BookTour = ({ mode = "book" }) => {
                 setSelectedOption(booking.selectedPaymentMethod || "Select"); // Set dropdown value
             }
         }
-    }, [id, bookedTours]);
+    }, [id, bookedTours, mode]);
 
     // use effect to get the selected tour details
     if (!selectedTour) {
@@ -205,7 +223,12 @@ const BookTour = ({ mode = "book" }) => {
                         selectedOption={selectedOption}
                         toggleDropdown={toggleDropdown}
                     />
-                    <CustomAlert />
+                    <CustomAlert
+                        isOpen={alertData.isOpen}
+                        message={alertData.message}
+                        buttons={alertData.buttons}
+                        onConfirm={handleConfirm}
+                    />
                 </div>
                 <div className="book-tour-cover-img">
                     <img src={BokingCover} alt="book-tour-cover" />
