@@ -2,7 +2,7 @@ import './style.css';
 import Header from '../Header/index';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PopularSection from './components/popularSection';
+import PopularSection from './components/PopularSection';
 import QuerySection from './components/QuerySection';
 
 const ExploreNow = () => {
