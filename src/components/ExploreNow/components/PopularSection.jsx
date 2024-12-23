@@ -1,5 +1,5 @@
 import locationItemsData from '../../../utils/LocationItemsData';
-import CustomLocationButton from '../../antDcomponents/CustomLocationButton';
+import CustomLocationButton from '../../AntDcomponents/CustomLocationButton';
 import '../style.css'
 /* eslint-disable react/prop-types */
 
