@@ -1,6 +1,8 @@
 import { Button } from 'antd';
-import './CustomButton.css';
 import PropTypes from 'prop-types';
+
+import './CustomButton.css';
+
 const CustomButton = ({ title, onClick }) => {
     return (
         <Button onClick={onClick} className='h-explorer-btn' type="primary">{title}</Button>

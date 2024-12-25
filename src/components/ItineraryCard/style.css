@@ -1,0 +1,43 @@
+.itinerary-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+}
+
+.itinerary-cards-first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.itinerary-cards h3 {
+  font-size: 1.5rem;
+  color: #202445;
+  font-weight: 500;
+  font-family: "Popins", sans-serif;
+}
+.weather-content {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+}
+.weather-content img {
+  height: 30px;
+  width: 30px;
+}
+.itinerary-cards ul li {
+  color: #404040;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Popins", sans-serif;
+  line-height: 1.5;
+}

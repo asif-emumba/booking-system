@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import LandingPage from "../components/LandingPage/index";
-import ExploreNow from "../components/ExploreNow/index";
-import AllTours from "../components/Tour/index";
-import TourDetailsPage from "../components/TourDetails/index";
-import BookTour from "../components/BookingTour/index";
-import MyTours from "../components/MyTours/index";
+import LandingPage from "../components/Features/LandingPage/index";
+import ExploreNow from "../components/Features/ExploreNow/index";
+import AllTours from "../components/Features/Tour/index";
+import TourDetailsPage from "../components/Features/TourDetails/index";
+import BookTour from "../components/Features/BookingTour/index";
+import MyTours from "../components/Features/MyTours/index";
 
 const Routing = () => {
     return (
