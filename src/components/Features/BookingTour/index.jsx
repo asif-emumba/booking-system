@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { addBooking, updateBooking } from '../../../store/Slice/BookedTourSlice';
+import { addBooking, updateBooking, useSelectBookedTours } from '../../../store/Slice/BookedTourSlice';
 
 import './style.css';
 import Icons from "../../../utils/Icons";
@@ -9,6 +9,7 @@ import Header from "../../Features/Header";
 import CustomAlert from "../../PopUpAlert";
 import BookTourForm from "./components/form";
 import { useForm } from "react-hook-form";
+import { useSelectTours } from "../../../store/Slice/TourSlice";
 
 const BookTour = () => {
     const { id } = useParams();
@@ -17,10 +18,11 @@ const BookTour = () => {
     const { BokingCover } = Icons
 
     const dispatch = useDispatch();
-    const tours = useSelector((state) => state.tours.value);
+    const tours = useSelectTours();
     const selectedTour = useSelector(state => state.tours.selectedTour)
         || tours.find(tour => tour.id === parseInt(id));
-    const bookedTours = useSelector((state) => state.bookedTours.bookings);
+    const bookedTours = useSelectBookedTours();
+    const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
     const [selectedOption, setSelectedOption] = useState("Select");
     const [isOpen, setIsOpen] = useState(false);
     const [alertData, setAlertData] = useState({
@@ -28,7 +30,7 @@ const BookTour = () => {
         message: 'Are you sure you want to delete this?',
         buttons: { cancel: 'Cancel', confirm: 'Delete' },
     });
-    const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
+
     const mode = location.state?.modeName || "book";
 
     const toggleDropdown = () => {
