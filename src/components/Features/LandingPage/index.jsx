@@ -11,7 +11,6 @@ const LandingPage = () => {
 
   const handleExploreNow = () => {
     navigateToExploreNow('/explore-now');
-    localStorage.clear();
   }
 
   return (
